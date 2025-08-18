@@ -1,0 +1,114 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+    
+  /* darkmode */
+  --bunker-dark: #050608;
+  --green-blue: #3ee1de;
+
+  /* lightmode */
+  --Matrix-light: #a25d4e;
+  --copper-rose: #9a6764;
+  /* background */
+  --mint-julip: #f2ebc1;
+}
+.header_image {
+  position: relative;
+  width: 100%; 
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_image-h1 {
+  position: absolute;
+  font-size: var(--text-5);
+  text-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+  z-index: 1;
+  top: 80%;
+  right: -5%;
+  display: block;
+  text-align: start;
+  padding: 0.5rem 1.5rem;
+  border-radius: 60px;
+  transition: all 0.3s ease;
+}
+
+.dark_h1-active {
+  background-color: rgba(8, 104, 104, 0.425);
+  color: var(--green-blue);
+}
+
+.light_h1-active {
+  background-color: rgba(242, 235, 193, 0.959);
+  color: var(--copper-rose);
+}
+
+.header_image-img {
+  position: relative;
+  z-index: -1;
+  transition: all 1s ease,opacity 1s ease;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+}
+
+/* switch.css */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 10px;
+  right: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--mint-julip);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color:var(--copper-rose);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--green-blue);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--bunker-dark);
+}
+

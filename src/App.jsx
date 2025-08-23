@@ -24,36 +24,74 @@ const Bubble = styled.div`
     background-color: ${props => props.color ? " var(--green-blue)" : "var(--mint-julip)"};
     color: ${props => props.color ? "var(--bunker-dark)" : "var(--copper-rose)"};
   }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 30%;
+    height: 10%;
+    font-size: clamp(5px, 5px + 0.5vw, 10px);
+    left: -20px;
+  }
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 30%;
+    height: 10%;
+    font-size: var(--text--2);
+    left: -20px;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 40%;
+    height: 15%;
+    left: -20px;
+    font-size: var(--text--1);
+  }
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    width: 40%;
+    height: 15%;
+    left: -50px;
+    font-size: var(--text--1);
+  }
 `;
 
 const lightTheme = {
   backgroundColor: "var(--mint-julip)",
   color: "var(--copper-rose)",
+  hoverBgColor: "var(--copper-rose)",
+  hoverColor: "var(--mint-julip)"
 }
 
 const darkTheme = {
-  backgroundColor: "var(--bunker-dark)",
+  backgroundColor: "rgba(8, 104, 104, 0.425)",
   color: "var(--green-blue)",
+  hoverBgColor: "var(--green-blue)",
+  hoverColor: "var(--bunker-dark)"
 }
 
-// const Box = styled.h1`
-//   position: absolute;
-//   fontSize: clamp(2.9rem, 2.6rem + 6.8vw, 6.2rem);
-//   top: 80%;
-//   right: -5%;
-//   display: block;
-//   text-align: start;
-//   z-index: 2;
-//   color: ${props => {props.theme.color;
-//     console.log(props.theme.color); return props.theme.color;
-//   }};
-//   background-color: ${props => {props.theme.backgroundColor;
-//     console.log(props.theme.backgroundColor); return props.theme.backgroundColor;
-//   }};
-//   padding: 0.5rem 1.5rem;
-//   border-radius: 60px;
-//   transition: all 0.3s ease;  
-// `;
+const Box = styled.h1`
+  position: absolute;
+  font-size: var(--text-4);
+  top: 80%;
+  right: -5%;
+  display: block;
+  text-align: start;
+  z-index: 2;
+  color: ${props => props.theme.color};
+  background-color: ${props => props.theme.backgroundColor};
+  padding: 0.5rem 1.5rem;
+  border-radius: 60px;
+  transition: all 0.3s ease; 
+  
+  &:hover {
+    transform: scale(1.05) translate(5px, -5px);
+    background-color: ${props => props.theme.hoverBgColor};
+    color: ${props => props.theme.hoverColor};
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--text-2);
+  }
+  @media (max-width: 480px) {
+    font-size: var(--text-1);
+  }
+`;
 
 const Title = styled.h2`
   line-height: 1.1;
@@ -87,12 +125,12 @@ function App() {
           </label>
 
           {/* Dynamically toggle class */}
-          <h1 className={`header_image-h1 ${!isDark ? "light_h1-active" : "dark_h1-active"}`}>
-          {/* <Box> */}
+          {/* <h1 className={`header_image-h1 ${!isDark ? "light_h1-active" : "dark_h1-active"}`}> */}
+          <Box>
             The Memories: <br />
             That Fades Over Time
-          {/* </Box> */}
-          </h1>
+          </Box>
+          {/* </h1> */}
 
           <Bubble color={isDark}>
             <Title> {isDark ? "Life Becomes dark sometimes" : "But Light Shines In the Dark"} </Title>

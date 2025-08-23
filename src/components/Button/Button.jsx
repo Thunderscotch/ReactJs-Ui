@@ -19,9 +19,9 @@ const StyledButton = styled.button`
     }
 `
 
-export const Button = ({ onClick, isDark, ...props }) => {
+export const Button = ({ onClick, isDark, className, ...props }) => {
     return (
-        <StyledButton onClick={onClick} isDark={isDark} {...props} className={cn(props.className)}/>
+        <StyledButton onClick={onClick} isDark={isDark} {...props} className={cn(className)}/>
     )
 }
 

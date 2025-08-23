@@ -115,23 +115,18 @@ function App() {
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <div id="home" aria-label="Home">
-        {/* <div className={`header_image ${!isDark ? "header_image-light" : "header_image-dark"}`}> */}
         <div className="header_image">
           <img className="header_image-img" src={isDark ? darkImg : lightImg} alt="image in dark mode" />
 
-          {/* Switch Button */}
           <label className="switch">
             <input type="checkbox" checked={isDark} onChange={handleToggle} />
             <span className="slider"></span>
           </label>
 
-          {/* Dynamically toggle class */}
-          {/* <h1 className={`header_image-h1 ${!isDark ? "light_h1-active" : "dark_h1-active"}`}> */}
           <Box>
             The Memories: <br />
             That Fades Over Time
           </Box>
-          {/* </h1> */}
 
           <Bubble color={isDark}>
             <Title> {isDark ? "Life Becomes dark sometimes" : "But Light Shines In the Dark"} </Title>

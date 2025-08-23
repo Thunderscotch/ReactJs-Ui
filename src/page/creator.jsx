@@ -46,10 +46,8 @@ export const Creator = ({ isDark }) => {
                     </p>
                 </div>
             </div>
-            <Button isDark={isDark} className='creator_button'>
-                <a href="https://en.wikipedia.org/wiki/Richard_Feynman" className='creator_button-link'>
+            <Button isDark={isDark} onClick = { () => window.open('https://en.wikipedia.org/wiki/Richard_Feynman')} className='creator_button'>
                     Read More
-                </a>
             </Button>
         </div>
     )

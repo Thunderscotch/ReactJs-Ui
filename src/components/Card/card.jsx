@@ -1,4 +1,4 @@
-import styles from '../../assets/Card.module.css';
+import styles from './Card.module.css';
 
 export const Card = ({ title, desctription, dark }) => {
     return (

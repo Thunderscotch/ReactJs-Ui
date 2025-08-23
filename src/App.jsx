@@ -1,9 +1,10 @@
-import "../src/assets/App.css";
+import "../src/App.css";
 import { useState, useEffect } from "react";
 import darkImg from "./assets/imagedark.jpg";
 import lightImg from "./assets/imagelight.jpg";
 import { Card } from './components/Card/card';
 import styled, { ThemeProvider } from "styled-components";
+import { Creator } from "./page/creator";
 
 const Bubble = styled.div`
   position: absolute;
@@ -141,6 +142,9 @@ function App() {
             desctription="The imagination of Certain some one came out of the void."
             dark={isDark}
           />
+        </div>
+        <div id="about">
+            <Creator isDark={isDark}/>
         </div>
       </div>
     </ThemeProvider>

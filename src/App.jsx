@@ -5,12 +5,12 @@ import lightImg from "./assets/imagelight.jpg";
 import { Card } from './components/Card/card';
 import styled, { ThemeProvider } from "styled-components";
 import { Creator } from "./page/creator";
-import { Nav } from './components/Nav/Nav.jsx'
+import { Nav } from './components/Nav/Nav.jsx';
 
 const Bubble = styled.div`
   position: absolute;
   width: 30%;
-  height: 20%;
+  height: 12%;
   border-radius: 120px;
   background-color: ${props => props.color ? "rgba(8, 104, 104, 0.425)" : "rgba(242, 235, 193, 0.959)"};
   color: ${(props) => (props.color ? "var(--green-blue)" : "var(--copper-rose)")};
@@ -23,8 +23,8 @@ const Bubble = styled.div`
 
   &:hover {
     transform: scale(1.05) translate(5px, -5px);
-    background-color: ${props => props.color ? " var(--green-blue)" : "var(--mint-julip)"};
-    color: ${props => props.color ? "var(--bunker-dark)" : "var(--copper-rose)"};
+    background-color: ${props => props.color ? " var(--green-blue)" : "var(--copper-rose)"};
+    color: ${props => props.color ? "var(--bunker-dark)" : "var(--mint-julip)"};
   }
 
   @media (min-width: 320px) and (max-width: 480px) {
@@ -47,7 +47,7 @@ const Bubble = styled.div`
   }
   @media (min-width: 1025px) and (max-width: 1440px) {
     width: 40%;
-    height: 15%;
+    height: 12%;
     left: -50px;
     font-size: var(--text--1);
   }

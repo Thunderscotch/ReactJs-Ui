@@ -45,9 +45,9 @@ const NavStyle = styled.nav`
     }
     `;
 
-export const Nav = ({ navigators, ...props }) => {
+export const Nav = ({ navigators, isDark, className, ...props }) => {
     return (
-        <NavStyle {...props} isDark={props.isDark} className={cn(props.className)}>
+        <NavStyle {...props} isDark={isDark} className={cn(className)}>
             <ul>
                 {navigators.map((navigator) => (
                     <li key={navigator.id}>

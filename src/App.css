@@ -135,17 +135,3 @@ input:checked + .slider:before {
   background-color: var(--bunker-dark);
 }
 
-/* .nav {
-  position: absolute;
-  width: 77%;
-  top: 20px;
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  z-index: 2;
-  position: sticky;
-  margin: -800px auto 10px;
-} */
-

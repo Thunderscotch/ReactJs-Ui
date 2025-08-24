@@ -40,7 +40,7 @@ const NavStyle = styled.nav`
 
     a:hover {
         color: ${(props) => props.isDark ? "var(--green-blue)" : "var(--copper-rose)"};
-        background-color: ${(props) => props.isDark ? "var(--bunker-dark)" : "var(--copper-rose)"};
+        background-color: ${(props) => props.isDark ? "var(--bunker-dark)" : "var(--mint-julip)"};
         border-radius: 50px;
     }
     `;

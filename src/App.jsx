@@ -5,6 +5,7 @@ import lightImg from "./assets/imagelight.jpg";
 import { Card } from './components/Card/card';
 import styled, { ThemeProvider } from "styled-components";
 import { Creator } from "./page/creator";
+import { Nav } from './components/Nav/Nav.jsx'
 
 const Bubble = styled.div`
   position: absolute;
@@ -51,6 +52,19 @@ const Bubble = styled.div`
     font-size: var(--text--1);
   }
 `;
+
+const navigator = [
+  {
+    id: 1,
+    name: 'The Illustration',
+    href: '#home'
+  },
+  {
+    id: 2,
+    name: 'The Creator',
+    href: '#about'
+  }
+];
 
 const lightTheme = {
   backgroundColor: "var(--mint-julip)",
@@ -114,11 +128,15 @@ function App() {
 
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+      <Nav
+        navigators={navigator}
+        isDark={isDark}
+      />
       <div id="home" aria-label="Home">
         <div className="header_image">
           <img className="header_image-img" src={isDark ? darkImg : lightImg} alt="image in dark mode" />
 
-          <label className="switch">
+          <label className="switch" aria-label="switch">
             <input type="checkbox" checked={isDark} onChange={handleToggle} />
             <span className="slider"></span>
           </label>
@@ -138,8 +156,8 @@ function App() {
             dark={isDark}
           />
         </div>
-        <div id="about">
-            <Creator isDark={isDark}/>
+        <div id="about" aria-label="About">
+          <Creator isDark={isDark} />
         </div>
       </div>
     </ThemeProvider>

@@ -90,3 +90,9 @@
     position: relative;
     left: 13px;
 }
+
+@media (max-width: 768px) {
+    .creator {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
